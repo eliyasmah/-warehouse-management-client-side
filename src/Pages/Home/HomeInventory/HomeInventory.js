@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { Card, CardGroup } from "react-bootstrap";
 
 const HomeInventory = () => {
   const [homeInventory, setHomeInventory] = useState([]);
@@ -11,32 +10,30 @@ const HomeInventory = () => {
   return (
     <div>
       <h2 className="text-center my-4">Inventory</h2>
-      {homeInventory.slice(0, 6).map((inventory) => (
-        <div key={inventory._id}>
-          <div>total name: {inventory.name}</div>
-
-          <CardGroup>
-            <Card>
-              <Card.Img variant="top" src={inventory.img} />
-              <Card.Body>
-                <Card.Title>{inventory.name}</Card.Title>
-                <p>Price:{inventory.price}</p>
-                <p>Quantity:{inventory.quantity}</p>
-                <p>Supplier Name:{inventory.supplier}</p>
-                <p>Description:{inventory.description}</p>
-                <Card.Text>
-                  This is a wider card with supporting text below as a natural
-                  lead-in to additional content. This content is a little bit
-                  longer.
-                </Card.Text>
-              </Card.Body>
-              <Card.Footer>
-                <small className="text-muted">Last updated 3 mins ago</small>
-              </Card.Footer>
-            </Card>
-          </CardGroup>
-        </div>
-      ))}
+      <div className="md:grid grid-cols-3 g-4">
+        {homeInventory.slice(0, 6).map((inventory) => (
+          <div key={inventory._id}>
+            <div className="row row-cols-1 row-cols-md-3 g-4 m-4">
+              <div className="h-100">
+                <img src={inventory.img} alt="" />
+                <div>
+                  <h5>{inventory.name}</h5>
+                  <p>Price:{inventory.price}</p>
+                  <p>Quantity:{inventory.quantity}</p>
+                  <p>Supplier Name:{inventory.supplier}</p>
+                  <p>
+                    Description:{inventory.description}
+                    {inventory?.description.slice(0, 20)}[...]
+                  </p>
+                </div>
+                <div className="">
+                  <button>Updata</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
