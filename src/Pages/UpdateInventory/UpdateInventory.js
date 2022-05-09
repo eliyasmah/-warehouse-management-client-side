@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 
 const UpdateInventory = () => {
   const { updateId } = useParams();
+
   return (
     <div>
       <h1>update inventory{updateId}</h1>

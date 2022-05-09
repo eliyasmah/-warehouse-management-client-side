@@ -11,6 +11,9 @@ const Header = () => {
       <CustomLink as={Link} to={"/blogs"}>
         Blogs
       </CustomLink>
+      <CustomLink as={Link} to={"/login"}>
+        Login
+      </CustomLink>
     </div>
   );
 };

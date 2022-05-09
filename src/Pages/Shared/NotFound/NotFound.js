@@ -4,7 +4,7 @@ import notFound from "../../../images/notFount/404-page.webp";
 const NotFound = () => {
   return (
     <div className="text-center">
-      <img src={notFound} alt="" />
+      <img className="img-fluid" src={notFound} alt="" />
     </div>
   );
 };

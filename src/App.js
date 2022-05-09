@@ -6,6 +6,7 @@ import Home from "./Pages/Home/Home/Home";
 import Blogs from "./Pages/Blogs/Blogs";
 import UpdateInventory from "./Pages/UpdateInventory/UpdateInventory";
 import NotFound from "./Pages/Shared/NotFound/NotFound";
+import Login from "./Pages/Login/Login/Login";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           element={<UpdateInventory></UpdateInventory>}
         ></Route>
         <Route path="/blogs" element={<Blogs></Blogs>}></Route>
+        <Route path="/login" element={<Login></Login>}></Route>
         <Route path="*" element={<NotFound></NotFound>}></Route>
       </Routes>
       <Footer></Footer>
