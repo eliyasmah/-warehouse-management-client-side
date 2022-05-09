@@ -6,9 +6,14 @@ const Blogs = () => {
       <div className="bg-info m-5 p-4 rounded">
         <h3>1. Differences between sql and nosql databases ?</h3>
         <p>
+          SQL-
+          <br />
           SQL databases have fixed or static or predefined schema. SQL databases
           are vertically scalable.SQL databases are best suited for complex
-          queries. NoSQL databases have dynamic schema. NoSQL databases are
+          queries.
+          <br />
+          NOSQL-
+          <br /> NoSQL databases have dynamic schema. NoSQL databases are
           horizontally scalable.Javascript is capable enough to add HTML and
           play with the DOM.
         </p>
