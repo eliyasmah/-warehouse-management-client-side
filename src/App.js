@@ -8,6 +8,8 @@ import UpdateInventory from "./Pages/UpdateInventory/UpdateInventory";
 import NotFound from "./Pages/Shared/NotFound/NotFound";
 import Login from "./Pages/Login/Login/Login";
 import Register from "./Pages/Login/Register/Register";
+import InventoryStock from "./Pages/InventoryStock/InventoryStock";
+import RequirAuth from "./Pages/Login/RequirAuth/RequirAuth";
 
 function App() {
   return (
@@ -17,9 +19,17 @@ function App() {
         <Route path="/" element={<Home></Home>}></Route>
         <Route
           path="/update/:updateId"
-          element={<UpdateInventory></UpdateInventory>}
+          element={
+            <RequirAuth>
+              <UpdateInventory></UpdateInventory>
+            </RequirAuth>
+          }
         ></Route>
         <Route path="/blogs" element={<Blogs></Blogs>}></Route>
+        <Route
+          path="/stock"
+          element={<InventoryStock></InventoryStock>}
+        ></Route>
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/account" element={<Register></Register>}></Route>
         <Route path="*" element={<NotFound></NotFound>}></Route>
