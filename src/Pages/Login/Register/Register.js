@@ -1,33 +1,38 @@
 import React, { useRef } from "react";
 import { Button, Form } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
-import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
+import {
+  useCreateUserWithEmailAndPassword,
+  useUpdateProfile,
+} from "react-firebase-hooks/auth";
 import auth from "./../../../firebase.init";
+import GoogleLogin from "../GoogleLogin/GoogleLogin";
 
 const Register = () => {
   const [createUserWithEmailAndPassword, user, loading, error] =
-    useCreateUserWithEmailAndPassword(auth);
+    useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
+  const [updateProfile, updating, error1] = useUpdateProfile(auth);
   const emailRef = useRef("");
   const passwordRef = useRef("");
   const nameRef = useRef("");
   const navigate = useNavigate();
 
-  const handleRegister = (event) => {
+  const handleRegister = async (event) => {
     event.preventDefault();
     const email = emailRef.current.value;
     const password = passwordRef.current.value;
     const name = nameRef.current.value;
 
-    createUserWithEmailAndPassword(email, password);
+    await createUserWithEmailAndPassword(email, password);
+    await updateProfile({ displayName: name });
+    alert("Updated profile");
+    navigate("/");
   };
 
   const navigateLogin = (event) => {
     navigate("/login");
   };
 
-  if (user) {
-    navigate("/");
-  }
   return (
     <div className="w-50 mx-auto">
       <h3 className="text-center text-primary my-4">Please Create Account</h3>
@@ -65,6 +70,7 @@ const Register = () => {
         >
           Please login
         </Link>
+        <GoogleLogin></GoogleLogin>
       </Form>
     </div>
   );

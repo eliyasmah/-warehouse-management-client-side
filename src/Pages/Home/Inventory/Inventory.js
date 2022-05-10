@@ -12,7 +12,11 @@ const Inventory = (props) => {
   };
   return (
     <div className="inventory-container shadow rounded p-3">
-      <img className="img-fluid rounded" src={img} alt="" />
+      <img
+        className="img-fluid rounded d-block mx-auto mb-2 w-100"
+        src={img}
+        alt=""
+      />
       <div>
         <h5>{name}</h5>
         <p>Price: {price}</p>
