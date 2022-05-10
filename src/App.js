@@ -7,6 +7,7 @@ import Blogs from "./Pages/Blogs/Blogs";
 import UpdateInventory from "./Pages/UpdateInventory/UpdateInventory";
 import NotFound from "./Pages/Shared/NotFound/NotFound";
 import Login from "./Pages/Login/Login/Login";
+import Register from "./Pages/Login/Register/Register";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         ></Route>
         <Route path="/blogs" element={<Blogs></Blogs>}></Route>
         <Route path="/login" element={<Login></Login>}></Route>
+        <Route path="/account" element={<Register></Register>}></Route>
         <Route path="*" element={<NotFound></NotFound>}></Route>
       </Routes>
       <Footer></Footer>
