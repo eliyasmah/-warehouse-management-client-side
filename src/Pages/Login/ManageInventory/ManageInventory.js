@@ -37,6 +37,7 @@ const ManageInventory = () => {
               <tr>
                 <td>{inventory.name}</td>
                 <td>{inventory.quantity}</td>
+                <td className="text-primary">{inventory.email}</td>
                 <td>
                   <button
                     className="btn btn-outline-primary"
