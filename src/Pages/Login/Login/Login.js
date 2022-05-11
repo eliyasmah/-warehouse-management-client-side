@@ -7,6 +7,9 @@ import {
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import auth from "../../../firebase.init";
 import GoogleLogin from "../GoogleLogin/GoogleLogin";
+import Loading from "../Loading/Loading";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {
   const [signInWithEmailAndPassword, user, loading, error] =
@@ -31,13 +34,23 @@ const Login = () => {
   const navigateAccount = (event) => {
     navigate("/account");
   };
+
+  if (loading || sending) {
+    return <Loading></Loading>;
+  }
+
   if (user) {
     navigate(from, { replace: true });
   }
 
   const resetPassword = async () => {
     const email = emailRef.current.value;
-    await sendPasswordResetEmail(email);
+    if (email) {
+      await sendPasswordResetEmail(email);
+      toast("send email");
+    } else {
+      toast("Please Enter your email address");
+    }
   };
   return (
     <div className="w-50 mx-auto">
@@ -60,9 +73,6 @@ const Login = () => {
             required
           />
         </Form.Group>
-        <Form.Group className="mb-3" controlId="formBasicCheckbox">
-          <Form.Check type="checkbox" label="Check me out" />
-        </Form.Group>
         <Button variant="primary" type="submit">
           Submit
         </Button>
@@ -82,6 +92,7 @@ const Login = () => {
           </button>{" "}
         </p>
         <GoogleLogin></GoogleLogin>
+        <ToastContainer />
       </Form>
     </div>
   );

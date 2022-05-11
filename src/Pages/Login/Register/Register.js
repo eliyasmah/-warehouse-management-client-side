@@ -7,6 +7,7 @@ import {
 } from "react-firebase-hooks/auth";
 import auth from "./../../../firebase.init";
 import GoogleLogin from "../GoogleLogin/GoogleLogin";
+import Loading from "./../Loading/Loading";
 
 const Register = () => {
   const [createUserWithEmailAndPassword, user, loading, error] =
@@ -29,6 +30,9 @@ const Register = () => {
     navigate("/");
   };
 
+  if (loading || updating) {
+    return <Loading></Loading>;
+  }
   const navigateLogin = (event) => {
     navigate("/login");
   };
@@ -56,9 +60,6 @@ const Register = () => {
             placeholder="Password"
             required
           />
-        </Form.Group>
-        <Form.Group className="mb-3" controlId="formBasicCheckbox">
-          <Form.Check type="checkbox" label="Check me out" />
         </Form.Group>
         <Button variant="primary" type="submit">
           Submit
