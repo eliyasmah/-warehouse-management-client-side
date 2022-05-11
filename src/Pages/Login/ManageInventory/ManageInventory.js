@@ -4,6 +4,23 @@ import useData from "../../../hooks/useData";
 
 const ManageInventory = () => {
   const [inventories, setInventories] = useData();
+
+  const handleDelete = (id) => {
+    const proceed = window.confirm("Are You Sure?");
+    if (proceed) {
+      const url = `http://localhost:5000/inventory/${id}`;
+      fetch(url, {
+        method: "DELETE",
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          const remaining = inventories.filter(
+            (inventory) => inventory._id !== id
+          );
+          setInventories(remaining);
+        });
+    }
+  };
   return (
     <div className="mt-4">
       {inventories.map((inventory) => (
@@ -19,7 +36,10 @@ const ManageInventory = () => {
                   </button>
                 </td>
                 <td>
-                  <button className="btn btn-outline-danger">
+                  <button
+                    className="btn btn-outline-danger"
+                    onClick={() => handleDelete(inventory._id)}
+                  >
                     Delete Item
                   </button>
                 </td>
