@@ -10,6 +10,8 @@ import Login from "./Pages/Login/Login/Login";
 import Register from "./Pages/Login/Register/Register";
 import InventoryStock from "./Pages/InventoryStock/InventoryStock";
 import RequirAuth from "./Pages/Login/RequirAuth/RequirAuth";
+import AddInventory from "./Pages/AddInventory/AddInventory";
+import ManageInventory from "./Pages/Login/ManageInventory/ManageInventory";
 
 function App() {
   return (
@@ -30,6 +32,11 @@ function App() {
           path="/stock"
           element={<InventoryStock></InventoryStock>}
         ></Route>
+        <Route
+          path="/manage"
+          element={<ManageInventory></ManageInventory>}
+        ></Route>
+        <Route path="/add" element={<AddInventory></AddInventory>}></Route>
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/account" element={<Register></Register>}></Route>
         <Route path="*" element={<NotFound></NotFound>}></Route>

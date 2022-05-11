@@ -2,65 +2,73 @@
     {
         "name": "Watermelon",
         "description":"Watermelon is a sweet and refreshing low calorie summer snack. It provides hydration and also essential nutrients, including vitamins, minerals, and antioxidants.",
-        "price": "1000tk",
-        "quantity": "240 pic",
+        "price": "1000",
+        "quantity": "240",
         "supplier": "Kamal Uddin",
+        "email": "kamaluddin@gmail.com",
         "img":"https://i.ibb.co/0YVwGsQ/watermelon.png"
     },
     {
         "name": "Strawberry",
         "description":"Strawberries are native to the temperate regions of the Northern Hemisphere, and cultivated varieties are widely grown throughout the world. The fruits are rich in vitamin C and are commonly eaten fresh as a dessert fruit, are used as a pastry or pie filling, and may be preserved in many ways.",
-        "price": "700tk",
-        "quantity": "320 kg",
+        "price": "700",
+        "quantity": "320",
         "supplier": "Jashim Uddin",
+        "email": "jashim uddin@gmail.com",
         "img":"https://i.ibb.co/MRN23wN/strawberry.png"
     },
     {
         "name": "Pineapple",
         "description":"Pineapple is an incredibly delicious, healthy tropical fruit. It’s packed with nutrients, antioxidants, and other helpful compounds, such as enzymes that can protect against inflammation and disease. It’s commonly eaten baked, grilled, or freshly cut.",
-        "price": "70tk",
-        "quantity": "330 pic",
+        "price": "70",
+        "quantity": "330",
         "supplier": "Rahim Khan",
+        "email": "rahimkhan@gmail.com",
         "img":"https://i.ibb.co/pWTwbPS/pineapple.png"
     },
     {
         "name": "Orange",
         "description":"Oranges are a type of low calorie, highly nutritious citrus fruit. As part of a healthful and varied diet, oranges contribute to strong, clear skin and can help lower a person’s risk of many conditions.",
-        "price": "250tk",
-        "quantity": "510 kg",
+        "price": "250",
+        "quantity": "510",
         "supplier": "Forid Hassan",
+        "email": "foridhassan@gmail.com",
         "img":"https://i.ibb.co/B2WN0xq/orange.png"
     },
     {
         "name": "Mango",
         "description":"Mangoes are a tropical fruit from the cashew family, Anacardiaceae. They are also a drupe, which means they have a single large seed or stone in the middle. Sometimes called the “king of fruits,” mangoes are one of the most widely consumed fruits in the world.",
-        "price": "110tk",
-        "quantity": "670 kg",
-        "supplier": "Kamal Uddin",
+        "price": "110",
+        "quantity": "670",
+        "supplier": "Onik Ahmed",
+        "email": "onikahmed@gmail.com",
         "img":"https://i.ibb.co/zN1YnWd/mango.png"
     },
     {
         "name": "Lemon",
         "description":"Watermelon is a sweet and refreshing low calorie summer snack. It provides hydration and also essential nutrients, including vitamins, minerals, and antioxidants.",
-        "price": "300tk",
-        "quantity": "440 kg",
+        "price": "300",
+        "quantity": "440",
         "supplier": "Lebu Bapari",
+        "email": "labubapari@gmail.com",
         "img":"https://i.ibb.co/n6v6gxf/lemon.png"
     },
     {
         "name": "Jackfruit",
         "description":"There are two main types of jackfruit. One is small and mushy. It tastes sweet, but it's slimy. The other type of jackfruit has crisp, crunchy flesh that's not as sweet.",
-        "price": "1000tk",
+        "price": "1000",
         "quantity": "240",
         "supplier": "Firoz Ahmed",
+        "email": "firozahmed@gmail.com",
         "img":"https://i.ibb.co/zVG2xT3/jackfruit.png"
     },
     {
         "name": "Banana",
         "description":"Bananas are one of the most popular fruits worldwide. They contain essential nutrients that can have a protective impact on health.",
-        "price": "100tk",
-        "quantity": "760 dorjon",
+        "price": "100",
+        "quantity": "760",
         "supplier": "Tamim Ikbal",
+        "email": "tamimikbal@gmail.com",
         "img":"https://i.ibb.co/cT9LzsR/banana.png"
     }
 ]

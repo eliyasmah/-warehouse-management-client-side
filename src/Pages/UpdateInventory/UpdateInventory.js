@@ -14,12 +14,17 @@ const UpdateInventory = () => {
   return (
     <div className="d-flex align-items-center w-50 mx-auto my-5 border p-4 rounded">
       <img className="img-fluid rounded" src={inventory.img} alt="" />
-      <div className="m-2">
+      <div className="mx-3">
         <h4>{inventory.name}</h4>
         <h5>Supplier: {inventory.supplier}</h5>
         <p>Price: {inventory.price}</p>
         <p>Quantity: {inventory.quantity}</p>
+        <span>
+          <input type="number" placeholder="Add Quantity"></input>
+          <button className="btn btn-primary mx-3">Add</button>
+        </span>
         <p>Description: {inventory.description}</p>
+        <button className="btn btn-primary">Delivered</button>
       </div>
     </div>
   );

@@ -21,6 +21,16 @@ const Header = () => {
       <CustomLink as={Link} to={"/stock"}>
         Stock
       </CustomLink>
+      {user && (
+        <>
+          <CustomLink as={Link} to={"/add"}>
+            Add Item
+          </CustomLink>
+          <CustomLink as={Link} to={"/manage"}>
+            Manage Items
+          </CustomLink>
+        </>
+      )}
       {user ? (
         <button
           onClick={handleSignOut}
