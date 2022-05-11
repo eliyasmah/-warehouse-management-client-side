@@ -1,12 +1,19 @@
 import React from "react";
 import { Table } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 import useData from "../../../hooks/useData";
 
 const ManageInventory = () => {
   const [inventories, setInventories] = useData();
 
+  const navigate = useNavigate();
+
+  const inventoryUpdate = (id) => {
+    navigate(`/update/${id}`);
+  };
+
   const handleDelete = (id) => {
-    const proceed = window.confirm("Are You Sure?");
+    const proceed = window.confirm("Do you want to delete item?");
     if (proceed) {
       const url = `http://localhost:5000/inventory/${id}`;
       fetch(url, {
@@ -31,7 +38,10 @@ const ManageInventory = () => {
                 <td>{inventory.name}</td>
                 <td>{inventory.quantity}</td>
                 <td>
-                  <button className="btn btn-outline-primary">
+                  <button
+                    className="btn btn-outline-primary"
+                    onClick={() => inventoryUpdate(inventory._id)}
+                  >
                     Update Item
                   </button>
                 </td>
