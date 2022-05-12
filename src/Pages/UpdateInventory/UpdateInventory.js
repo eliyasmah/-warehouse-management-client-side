@@ -45,23 +45,29 @@ const UpdateInventory = () => {
       });
   };
   return (
-    <div className="d-flex align-items-center w-50 mx-auto my-5 border p-4 rounded">
-      <div className="flex-1">
-        <img className=" rounded" src={inventory.img} alt="" />
+    <div className="min-vw-100 my-5 ">
+      <div className="d-md-flex flex-row justify-content-evenly w-75 mx-auto border p-4 rounded">
+        <div>
+          <img className=" rounded" src={inventory.img} alt="" />
+        </div>
+        <div className="mx-3">
+          <h4>{inventory.name}</h4>
+          <h5>Supplier: {inventory.supplier}</h5>
+          <p>Price: {inventory.price}</p>
+          <p>Quantity: {inventory.quantity}</p>
+          <form onSubmit={handleUpdateQuantity}>
+            <input
+              type="number"
+              name="update"
+              placeholder="Add Quantity"
+            ></input>
+            <input className="btn btn-primary mx-3" type="submit" value="Add" />
+          </form>
+          <p>Description: {inventory.description}</p>
+          <button className="btn btn-primary">Delivered</button>
+        </div>
+        <ToastContainer></ToastContainer>
       </div>
-      <div className="mx-3 flex-1">
-        <h4>{inventory.name}</h4>
-        <h5>Supplier: {inventory.supplier}</h5>
-        <p>Price: {inventory.price}</p>
-        <p>Quantity: {inventory.quantity}</p>
-        <form onSubmit={handleUpdateQuantity}>
-          <input type="number" name="update" placeholder="Add Quantity"></input>
-          <input className="btn btn-primary mx-3" type="submit" value="Add" />
-        </form>
-        <p>Description: {inventory.description}</p>
-        <button className="btn btn-primary">Delivered</button>
-      </div>
-      <ToastContainer></ToastContainer>
     </div>
   );
 };

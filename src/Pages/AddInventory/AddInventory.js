@@ -27,7 +27,7 @@ const AddInventory = () => {
       });
   };
   return (
-    <div className="w-50 mx-auto my-4">
+    <div className="w-50 mx-auto my-4 ">
       <h2 className="text-center text-primary">Add New Item</h2>
       <form className="d-flex flex-column" onSubmit={handleSubmit(onSubmit)}>
         <input
