@@ -31,7 +31,7 @@ const ManageInventory = () => {
   return (
     <div className="mt-4">
       {inventories.map((inventory) => (
-        <div className="w-75 mx-auto my-2" key={inventory._id}>
+        <div className="w-75 w-sm-100 mx-auto " key={inventory._id}>
           <Table striped bordered hover variant="blue">
             <tbody className="text-left">
               <tr>
