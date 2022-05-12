@@ -13,7 +13,11 @@ const Banner = () => {
   return (
     <Carousel activeIndex={index} onSelect={handleSelect}>
       <Carousel.Item>
-        <img className="d-block vh-100 w-100" src={banner1} alt="First slide" />
+        <img
+          className="d-flex img-fluid vh-50 mx-auto rounded"
+          src={banner1}
+          alt="First slide"
+        />
         <Carousel.Caption>
           <h3>First slide label</h3>
           <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
@@ -21,7 +25,7 @@ const Banner = () => {
       </Carousel.Item>
       <Carousel.Item>
         <img
-          className="d-block vh-100 w-100"
+          className="d-flex img-fluid vh-50 mx-auto rounded"
           src={banner2}
           alt="Second slide"
         />
@@ -32,7 +36,11 @@ const Banner = () => {
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
-        <img className="d-block vh-100 w-100" src={banner3} alt="Third slide" />
+        <img
+          className="d-flex img-fluid vh-50 mx-auto rounded"
+          src={banner3}
+          alt="Third slide"
+        />
 
         <Carousel.Caption>
           <h3>Third slide label</h3>

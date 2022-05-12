@@ -5,7 +5,7 @@ import Banner from "./../Banner/Banner";
 const Home = () => {
   return (
     <>
-      <h1>Hello Organic</h1>
+      <h1 className="text-primary text-center mt-3">Hello Organic</h1>
       <Banner></Banner>
       <HomeInventory></HomeInventory>
     </>
