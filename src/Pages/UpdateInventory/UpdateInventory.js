@@ -7,7 +7,7 @@ const UpdateInventory = () => {
   const { updateId } = useParams();
   const [inventory, setInventory] = useState({});
   useEffect(() => {
-    const url = `http://localhost:5000/inventory/${updateId}`;
+    const url = `https://mighty-tor-18710.herokuapp.com/inventory/${updateId}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setInventory(data));
@@ -17,28 +17,39 @@ const UpdateInventory = () => {
     event.preventDefault();
     let updatedQuantity =
       parseFloat(+inventory.quantity) + parseFloat(event.target.update.value);
-    let updateItem = { quantity: updatedQuantity };
-    setInventory(updateItem);
-
-    const url = `http://localhost:5000/inventory/${updateId}`;
+    let updateItem = { updatedQuantity };
+    // setInventory(updateItem);
+    let data = {
+      name: inventory.name,
+      description: inventory.description,
+      price: inventory.price,
+      supplier: inventory.supplier,
+      img: inventory.img,
+      quantity: updateItem,
+    };
+    const url = `https://mighty-tor-18710.herokuapp.com/inventory/${updateId}`;
 
     fetch(url, {
       method: "PUT",
-      body: JSON.stringify(updateItem),
+
       headers: {
         "Content-type": "application/json",
       },
+      body: JSON.stringify(data),
     })
       .then((response) => response.json())
       .then((data) => {
+        setInventory(data);
         event.target.reset();
         toast("Restock Success");
       });
   };
   return (
     <div className="d-flex align-items-center w-50 mx-auto my-5 border p-4 rounded">
-      <img className="img-fluid rounded" src={inventory.img} alt="" />
-      <div className="mx-3">
+      <div className="flex-1">
+        <img className=" rounded" src={inventory.img} alt="" />
+      </div>
+      <div className="mx-3 flex-1">
         <h4>{inventory.name}</h4>
         <h5>Supplier: {inventory.supplier}</h5>
         <p>Price: {inventory.price}</p>

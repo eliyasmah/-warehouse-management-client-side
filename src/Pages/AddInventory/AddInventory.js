@@ -1,7 +1,10 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../../firebase.init";
 
 const AddInventory = () => {
+  const [user] = useAuthState(auth);
   const {
     register,
     handleSubmit,
@@ -10,7 +13,7 @@ const AddInventory = () => {
   } = useForm();
   const onSubmit = (data) => {
     console.log(data);
-    const url = `http://localhost:5000/inventory`;
+    const url = `https://mighty-tor-18710.herokuapp.com/inventory`;
     fetch(url, {
       method: "POST",
       headers: {
@@ -55,6 +58,7 @@ const AddInventory = () => {
           className="mb-3"
           placeholder="Email Address"
           type="email"
+          value={user.email}
           {...register("supplierName")}
         />
         <input
