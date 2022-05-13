@@ -12,6 +12,9 @@ const ManageInventory = () => {
     navigate(`/update/${id}`);
   };
 
+  const addNewItem = () => {
+    navigate("/add");
+  };
   const handleDelete = (id) => {
     const proceed = window.confirm("Do you want to delete item?");
     if (proceed) {
@@ -28,9 +31,17 @@ const ManageInventory = () => {
         });
     }
   };
+
   return (
     <div>
-      <div></div>
+      <div>
+        <button
+          onClick={() => addNewItem()}
+          className="btn btn-primary d-block mx-auto my-5"
+        >
+          Add New Item
+        </button>
+      </div>
       <div className="mt-4">
         {inventories.map((inventory) => (
           <div className="w-75  mx-auto " key={inventory._id}>

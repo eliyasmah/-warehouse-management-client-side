@@ -6,7 +6,7 @@ import Banner from "./../Banner/Banner";
 
 const Home = () => {
   const navigate = useNavigate();
-  const manageInventories = (id) => {
+  const manageInventories = () => {
     navigate("/manage");
   };
   return (
