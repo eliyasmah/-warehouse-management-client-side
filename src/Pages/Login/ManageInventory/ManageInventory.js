@@ -15,7 +15,7 @@ const ManageInventory = () => {
   const addNewItem = () => {
     navigate("/add");
   };
-  const handleDelete = (id) => {
+  const inventoryDelete = (id) => {
     const proceed = window.confirm("Do you want to delete item?");
     if (proceed) {
       const url = `https://mighty-tor-18710.herokuapp.com/inventory/${id}`;
@@ -62,7 +62,7 @@ const ManageInventory = () => {
                   <td>
                     <button
                       className="btn btn-outline-danger"
-                      onClick={() => handleDelete(inventory._id)}
+                      onClick={() => inventoryDelete(inventory._id)}
                     >
                       Delete Item
                     </button>

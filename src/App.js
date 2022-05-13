@@ -8,10 +8,10 @@ import UpdateInventory from "./Pages/UpdateInventory/UpdateInventory";
 import NotFound from "./Pages/Shared/NotFound/NotFound";
 import Login from "./Pages/Login/Login/Login";
 import Register from "./Pages/Login/Register/Register";
-import InventoryStock from "./Pages/InventoryStock/InventoryStock";
 import RequirAuth from "./Pages/Login/RequirAuth/RequirAuth";
 import AddInventory from "./Pages/AddInventory/AddInventory";
 import ManageInventory from "./Pages/Login/ManageInventory/ManageInventory";
+import MyItems from "./Pages/MyItems/MyItems";
 
 function App() {
   return (
@@ -29,10 +29,7 @@ function App() {
           }
         ></Route>
         <Route path="/blogs" element={<Blogs></Blogs>}></Route>
-        <Route
-          path="/stock"
-          element={<InventoryStock></InventoryStock>}
-        ></Route>
+        <Route path="/myItems" element={<MyItems></MyItems>}></Route>
         <Route
           path="/manage"
           element={<ManageInventory></ManageInventory>}
