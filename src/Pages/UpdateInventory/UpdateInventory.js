@@ -53,8 +53,8 @@ const UpdateInventory = () => {
         <div className="mx-3">
           <h4>{inventory.name}</h4>
           <h5>Supplier: {inventory.supplier}</h5>
-          <p>Price: {inventory.price}</p>
-          <p>Quantity: {inventory.quantity}</p>
+          <p>Price: {inventory.price} kg</p>
+          <p>Quantity: {inventory.quantity} kg</p>
           <form onSubmit={handleUpdateQuantity}>
             <input
               type="number"

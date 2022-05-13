@@ -29,36 +29,39 @@ const ManageInventory = () => {
     }
   };
   return (
-    <div className="mt-4">
-      {inventories.map((inventory) => (
-        <div className="w-75  mx-auto " key={inventory._id}>
-          <Table striped bordered hover variant="blue">
-            <tbody className="text-left">
-              <tr>
-                <td>{inventory.name}</td>
-                <td>{inventory.quantity}</td>
-                <td className="text-primary">{inventory.email}</td>
-                <td>
-                  <button
-                    className="btn btn-outline-primary"
-                    onClick={() => inventoryUpdate(inventory._id)}
-                  >
-                    Update Item
-                  </button>
-                </td>
-                <td>
-                  <button
-                    className="btn btn-outline-danger"
-                    onClick={() => handleDelete(inventory._id)}
-                  >
-                    Delete Item
-                  </button>
-                </td>
-              </tr>
-            </tbody>
-          </Table>
-        </div>
-      ))}
+    <div>
+      <div></div>
+      <div className="mt-4">
+        {inventories.map((inventory) => (
+          <div className="w-75  mx-auto " key={inventory._id}>
+            <Table striped bordered hover variant="blue">
+              <tbody className="text-left">
+                <tr>
+                  <td>{inventory.name}</td>
+                  <td>{inventory.quantity}</td>
+                  <td className="text-primary">{inventory.email}</td>
+                  <td>
+                    <button
+                      className="btn btn-outline-primary"
+                      onClick={() => inventoryUpdate(inventory._id)}
+                    >
+                      Update Item
+                    </button>
+                  </td>
+                  <td>
+                    <button
+                      className="btn btn-outline-danger"
+                      onClick={() => handleDelete(inventory._id)}
+                    >
+                      Delete Item
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </Table>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

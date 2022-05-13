@@ -19,8 +19,8 @@ const Inventory = (props) => {
       />
       <div>
         <h5>{name}</h5>
-        <p>Price: {price}</p>
-        <p>Quantity: {quantity}</p>
+        <p>Price: {price} Kg</p>
+        <p>Quantity: {quantity} kg</p>
         <p>Supplier Name: {supplier}</p>
         <p>Description: {description}</p>
       </div>
