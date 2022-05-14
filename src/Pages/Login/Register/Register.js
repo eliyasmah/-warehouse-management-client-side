@@ -8,6 +8,8 @@ import {
 import auth from "./../../../firebase.init";
 import GoogleLogin from "../GoogleLogin/GoogleLogin";
 import Loading from "./../Loading/Loading";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Register = () => {
   const [createUserWithEmailAndPassword, user, loading, error] =
@@ -26,7 +28,7 @@ const Register = () => {
 
     await createUserWithEmailAndPassword(email, password);
     await updateProfile({ displayName: name });
-    alert("Updated profile");
+    toast("Updated profile");
     navigate("/");
   };
 
@@ -73,6 +75,7 @@ const Register = () => {
         </Link>
         <GoogleLogin></GoogleLogin>
       </Form>
+      <ToastContainer />
     </div>
   );
 };
