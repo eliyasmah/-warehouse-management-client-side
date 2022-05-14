@@ -88,8 +88,8 @@ const Login = () => {
             className="btn btn-link text-primary pe-auto text-decoration-none"
             onClick={resetPassword}
           >
-            Forget Password?{" "}
-          </button>{" "}
+            Forget Password?
+          </button>
         </p>
         <GoogleLogin></GoogleLogin>
         <ToastContainer />

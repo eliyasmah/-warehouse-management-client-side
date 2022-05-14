@@ -1,13 +1,10 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
 import useData from "../../hooks/useData";
 
 const MyInventories = (props) => {
   const [inventories, setInventories] = useData();
   const { _id, name, img, price, quantity, supplier, description } =
     props.inventory;
-
-  // const navigate = useNavigate();
 
   const itemDelete = (id) => {
     const proceed = window.confirm("Do you want to delete item?");
